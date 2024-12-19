@@ -1,47 +1,24 @@
 
 
-# Macro Matrix Website
+# Pricing Plans
 
-The **Macro Matrix** website is a responsive, high-performance web application developed using **React.js**. It is designed to present the company’s products, services, and user reviews in a visually appealing and user-friendly manner. The website’s layout is optimized for various devices, ensuring seamless navigation and an engaging experience for visitors across platforms.
+We offer flexible pricing options to fit your needs. Choose the plan that works best for you and get started today!
 
+## Plans
 
-# Steps to Run the Project Locally
+### 1. **Basic Plan**
+- Price: $XX/month
+- Includes essential features for individuals or small teams.
 
-### Prerequisites
-Ensure that **Node.js** (v14 or later) and **npm** (v6 or later) are installed on your machine.
+### 2. **Professional Plan**
+- Price: $XX/month
+- Designed for growing businesses with more features and support.
 
-### Installation
+### 3. **Enterprise Plan**
+- Price: Custom
+- Tailored for large teams with advanced features and priority support.
 
-1. **Clone the Repository**:
+---
 
-   ```bash
-   git clone https://github.com/MUHAMMADAFZAL59/MacroMatrix-Website
-   ```
+For any questions or help choosing a plan, feel free to contact us. We're here to help!
 
-2. **Navigate to the Project Directory**:
-
-   ```bash
-   cd macro-matrix-frontend
-   ```
-
-3. **Install Dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-4. **Start the Development Server**:
-
-   ```bash
-   npm start
-   ```
-
-5. **Access the Website**:
-
-   Open your browser and navigate to:
-
-   ```
-   http://localhost:3000
-   ```
-
-This will launch the Macro Matrix website on your local environment for development and testing.
