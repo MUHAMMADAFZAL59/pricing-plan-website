@@ -1,21 +1,111 @@
+/* Ensure full width of the header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-  }
-  
-  .header .logo img {
-    height: 50px;
-  }
-  
-  .header nav ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  .header nav ul li {
-    margin: 0 10px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header.dark {
+  background-color: #5a5151;
+}
+
+.logo {
+  height: 90px;
+  display: block;
+  margin-left: 8px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.get-started,
+.theme-toggle {
+  background-color: #9b0808;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 20px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-started {
+  background-color: #d32b2b;
+}
+
+.get-started:hover,
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.5);
+}
+
+.get-started::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #ff6f00, #ff0000, #ff4500, #ff6f00);
+  background-size: 400%;
+  animation: border-glow 3s linear infinite;
+  z-index: -1;
+}
+
+.get-started:hover::before {
+  background-position: 100%;
+}
+
+@keyframes border-glow {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+.theme-toggle {
+  background-color: #d32b2b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle .icon {
+  font-size: 20px;
+  color: yellow;
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+  color: yellow;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode {
+  background-color: #0c0b0b;
+  color: white;
+}
+
+body.dark-mode .header {
+  background-color: #111111;
+}

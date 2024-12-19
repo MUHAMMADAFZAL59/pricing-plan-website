@@ -1,24 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
-function Header() {
+const Header = ({ setIsDarkMode }) => {
+  const toggleDarkMode = () => {
+    setIsDarkMode(prev => !prev);
+    document.body.classList.toggle('dark-mode'); 
+  };
+
   return (
     <header className="header">
-      <div className="logo">
-        <img src="/assets/logo.png" alt="Macro Matrix Logo" />
+      <img
+        src="/assests/bugdev.png"
+        alt="Logo"
+        className="logo"
+      />
+      <div className="header-right">
+        <button className="get-started">Get Started</button>
+        <button className="theme-toggle" onClick={toggleDarkMode}>
+          {document.body.classList.contains('dark-mode') ? (
+            <>
+              <span className="icon sun-icon">&#9728;</span> Light Mode
+            </>
+          ) : (
+            <>
+              <span className="icon moon-icon">&#9790;</span> Dark Mode
+            </>
+          )}
+        </button>
       </div>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/company">Company</Link></li>
-          <li><Link to="/apps">Apps</Link></li>
-          <li><Link to="/reviews">Reviews</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-      </nav>
     </header>
   );
-}
+};
 
 export default Header;

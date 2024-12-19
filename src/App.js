@@ -1,33 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Company from './components/Company';
-import Apps from './components/Apps';
-import Reviews from './components/Reviews';
-import Contact from './components/Contact';
+import PricingCardList from './components/PricingCardList';
 import './styles/App.css';
 
-function App() {
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   return (
-    <Router>
-      <div className="app-container">
-        <Header />
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/apps" element={<Apps />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}>
+      <video className="video-background" autoPlay loop muted>
+        <source
+          src={isDarkMode ? '/assests/animation2.mp4' : '/assests/animation3.mp4'}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <Header setIsDarkMode={setIsDarkMode} />
+      <PricingCardList />
+    </div>
   );
-}
+};
 
 export default App;
